@@ -6,7 +6,6 @@ import time
 from database import Database
 
 app = Flask(__name__)
-app.config["DEBUG"] = True
 logger = settings.logmaker(__name__)
 logger.debug("Init")
 
@@ -113,4 +112,11 @@ def apply_caching(response):
 
 
 if __name__ == '__main__':
-    app.run()
+    if __name__ == "__main__":
+        import platform
+
+        if platform.system() == "Windows":
+            app.run("127.0.0.1", port=5000, debug=True)
+            # app.run("127.0.0.4", port=5478, debug=True)
+        elif platform.system() == "Linux":
+            app.run(host='0.0.0.0', port=8888)
