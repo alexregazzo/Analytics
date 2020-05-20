@@ -16,7 +16,7 @@ os.makedirs(LOG_DIRPATH, exist_ok=True)
 # Setup log
 LOG_CONFIG_DICT = {
     'version': 1,
-    'disable_existing_loggers': True,
+    'disable_existing_loggers': False,
     'formatters': {
         'standard': {
             'format': LOG_FORMAT
@@ -41,10 +41,6 @@ LOG_CONFIG_DICT = {
     'loggers': {
         'WebTracker': {
             'handlers': ['default'],
-            'level': 'DEBUG',
-        },
-        'werkzeug': {
-            'handlers': [],
             'level': 'DEBUG',
         }
     }
