@@ -3,9 +3,11 @@ fetch("https://api.ipify.org/").then(response => response.text()).then(data => m
 
 let hash = "";
 let attempt = 0;
+let domain = "http://webtracker.duckdns.org:8888/";
+// let domain = "http://127.0.0.1:5000/";
 
 function send_track() {
-    fetch(`http://127.0.0.1:5000/track/?hash=${hash}`,
+    fetch(`${domain}track/?hash=${hash}`,
         {
             method: "POST",
             body: JSON.stringify(
@@ -33,6 +35,7 @@ function send_track() {
             }
         })
         .then(function (data) {
+            console.log("new hash", data);
             hash = data;
             setTimeout(`send_track()`, 10000);
         })
