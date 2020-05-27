@@ -17,7 +17,7 @@ def tracker():
 
 
 @app.route('/test')
-def hello_world():
+def test():
     return "Hi, its working"
 
 
