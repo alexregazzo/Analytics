@@ -40,7 +40,7 @@ LOG_CONFIG_DICT = {
     },
     'loggers': {
         'WebTracker': {
-            'handlers': ['default'],
+            'handlers': ['stream'],
             'level': 'DEBUG',
         }
     }
