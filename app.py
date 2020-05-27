@@ -16,6 +16,12 @@ def tracker():
         return f.read()
 
 
+@app.route('/tester')
+def tracker():
+    with open("static/js/tester.js") as f:
+        return f.read()
+
+
 @app.route('/test')
 def test():
     return "Hi, its working"
