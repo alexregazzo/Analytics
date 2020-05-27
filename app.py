@@ -16,6 +16,11 @@ def tracker():
         return f.read()
 
 
+@app.route('/test')
+def hello_world():
+    return "Hi, its working"
+
+
 @app.route('/')
 def hello_world():
     return render_template("test.html")
